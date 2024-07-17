@@ -21,7 +21,7 @@ int main(){
     
     printf("Implementacion de queue a traves de una lista ligada...\n");
     printf("Un queue es como la fila del super...\n");
-    printf("Es una estructura FIFO es decir, el primer elemento en entrar es el primero en salir...\n");
+    printf("Es una estructura FIFO es decir, el primer elemento en entrar es el primero en salir...\n\n");
 
     //Creando queue
     Node* my_queue = NULL;
@@ -30,6 +30,14 @@ int main(){
     enqueue(&my_queue, 2);
     enqueue(&my_queue, 3);
 
+    //Imprimiendo el contenido del queue
+    printQueue(&my_queue);
+
+    //Sacando el elemento del frente del queue
+    printf("El frente del queue es %d \n", dequeue(&my_queue));
+    printf("El frente del queue es %d \n", dequeue(&my_queue));
+    
+    //Imprimiendo el contenido del queue
     printQueue(&my_queue);
 
     return 0;
@@ -57,9 +65,19 @@ void enqueue(Node** front, int val){
 
 void printQueue(Node** front){
     Node* tmp = *front;
+    printf("El contenido del queue es: \t");
     while( tmp != NULL){
         printf("%d-> ",tmp->val);
         tmp = tmp->next;
     }
     printf("\n");
+}
+
+int dequeue(Node** front){
+    int val = (*front)->val;
+    Node* to_delete = *front;
+    *front = (*front)->next;
+    free(to_delete);
+
+    return val;
 }
