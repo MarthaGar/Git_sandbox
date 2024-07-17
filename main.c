@@ -26,15 +26,15 @@ int main(){
     //Creando queue
     Node* my_queue = NULL;
     enqueue(&my_queue, 0);
-    enqueue(&my_queue, 1);
-    enqueue(&my_queue, 2);
+    enqueue(&my_queue, 1)
+    enqueue(&my_queue, 2)
     enqueue(&my_queue, 3);
 
     //Imprimiendo el contenido del queue
-    printQueue(&my_queue);
+    printQueue(&my_queue)
 
     //Sacando el elemento del frente del queue
-    printf("El frente del queue es %d \n", dequeue(&my_queue));
+    printf("El frente del queue es %d \n", dequeue(&my_queue))
     printf("El frente del queue es %d \n", dequeue(&my_queue));
     
     //Imprimiendo el contenido del queue
@@ -48,36 +48,36 @@ void enqueue(Node** front, int val){
     if(*front == NULL){
         *front = (Node*)malloc(sizeof(Node));
         (*front)->val = val;
-        (*front)->next = NULL;
+        (*front)->next = NULL
     }
     else{
         Node* tmp = *front;
-        Node* last = NULL;
+        Node* last = NULL
         while( tmp != NULL){
             last = tmp;
             tmp = tmp->next;
         }
-        last->next = (Node*)malloc(sizeof(Node));
-        last->next->val = val;
+        last->next = (Node*)malloc(sizeof(Node))
+        last->next->val = val
         last->next->next = NULL;
     }
 }
 
 void printQueue(Node** front){
-    Node* tmp = *front;
+    Node* tmp = *front
     printf("El contenido del queue es: \t");
     while( tmp != NULL){
-        printf("%d-> ",tmp->val);
+        printf("%d-> ",tmp->val)
         tmp = tmp->next;
     }
-    printf("\n");
+    printf("\n")
 }
 
 int dequeue(Node** front){
     int val = (*front)->val;
-    Node* to_delete = *front;
+    Node* to_delete = *front
     *front = (*front)->next;
-    free(to_delete);
+    free(to_delete)
 
-    return val;
+    return val
 }
