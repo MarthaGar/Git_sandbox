@@ -30,6 +30,8 @@ int main(){
     enqueue(&my_queue, 2);
     enqueue(&my_queue, 3);
 
+    printQueue(&my_queue);
+
     return 0;
 }
 
@@ -51,4 +53,13 @@ void enqueue(Node** front, int val){
         last->next->val = val;
         last->next->next = NULL;
     }
+}
+
+void printQueue(Node** front){
+    Node* tmp = *front;
+    while( tmp != NULL){
+        printf("%d-> ",tmp->val);
+        tmp = tmp->next;
+    }
+    printf("\n");
 }
