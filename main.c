@@ -77,7 +77,7 @@ int dequeue(Node** front){
     int val = (*front)->val;
     Node* to_delete = *front
     *front = (*front)->next;
-    free(to_delete)
+    free(to_delete);
 
-    return val
+    return val;
 }
