@@ -48,17 +48,17 @@ void enqueue(Node** front, int val){
     if(*front == NULL){
         *front = (Node*)malloc(sizeof(Node));
         (*front)->val = val;
-        (*front)->next = NULL
+        (*front)->next = NULL;
     }
     else{
         Node* tmp = *front;
-        Node* last = NULL
+        Node* last = NULL;
         while( tmp != NULL){
             last = tmp;
             tmp = tmp->next;
         }
-        last->next = (Node*)malloc(sizeof(Node))
-        last->next->val = val
+        last->next = (Node*)malloc(sizeof(Node));
+        last->next->val = val;
         last->next->next = NULL;
     }
 }
