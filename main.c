@@ -3,8 +3,8 @@
 //la operacion front "que nos devolvera el primer elemento en el queue"
 //la operacion dequeue "que nos devolvera el primer elemento del queue y ademas borrara dicho elemento"
 //la ultima funcion print_queue() nos servira para visualizar el contenido del queue
-#include<stdio.h>
-#include<stdlib.h>
+#include<stdio.h>;
+#include<stdlib.h>;
 
 
 //Anadiendo declaracion de funciones y estructura para implementar el QUEUE
@@ -26,15 +26,15 @@ int main(){
     //Creando queue
     Node* my_queue = NULL;
     enqueue(&my_queue, 0);
-    enqueue(&my_queue, 1)
-    enqueue(&my_queue, 2)
+    enqueue(&my_queue, 1);
+    enqueue(&my_queue, 2);
     enqueue(&my_queue, 3);
 
     //Imprimiendo el contenido del queue
-    printQueue(&my_queue)
+    printQueue(&my_queue);
 
     //Sacando el elemento del frente del queue
-    printf("El frente del queue es %d \n", dequeue(&my_queue))
+    printf("El frente del queue es %d \n", dequeue(&my_queue));
     printf("El frente del queue es %d \n", dequeue(&my_queue));
     
     //Imprimiendo el contenido del queue
@@ -75,7 +75,7 @@ void printQueue(Node** front){
 
 int dequeue(Node** front){
     int val = (*front)->val;
-    Node* to_delete = *front
+    Node* to_delete = *front;
     *front = (*front)->next;
     free(to_delete);
 
