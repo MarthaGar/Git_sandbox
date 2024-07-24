@@ -64,13 +64,13 @@ void enqueue(Node** front, int val){
 }
 
 void printQueue(Node** front){
-    Node* tmp = *front
+    Node* tmp = *front;
     printf("El contenido del queue es: \t");
     while( tmp != NULL){
-        printf("%d-> ",tmp->val)
+        printf("%d-> ",tmp->val);
         tmp = tmp->next;
     }
-    printf("\n")
+    printf("\n");
 }
 
 int dequeue(Node** front){
